@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Criminal Sketch Generator</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="header">
+
+    <div>
+        <h1><i class="fas fa-user-secret"></i> AI Criminal Sketch Generator</h1>
+        <p>Advanced AI-Powered Forensic Investigation System</p>
+    </div>
+
+    <div class="status">
+        <span class="online"></span>
+        System Online
+    </div>
+
+</div>
+
+<div class="topbar">
+
+    <div class="card">
+        <h4>Case ID</h4>
+        <p>#CSG-001</p>
+    </div>
+
+    <div class="card">
+        <h4>Date</h4>
+        <p id="date"></p>
+    </div>
+
+    <div class="card">
+        <h4>Officer</h4>
+        <p>Investigator</p>
+    </div>
+
+</div>
+
+<div class="dashboard">
+
+    <div class="panel">
+
+        <h2>Witness Information</h2>
+
+        <input type="text" id="name" placeholder="Witness Name">
+
+        <textarea
+            id="description"
+            rows="10"
+            placeholder="Describe suspect appearance..."
+        ></textarea>
+
+        <input
+            type="text"
+            id="features"
+            placeholder="Special marks, scars, tattoos..."
+        >
+
+    </div>
+
+    <div class="panel">
+
+        <h2>Generated Sketch</h2>
+
+        <div class="image-container">
+
+            <img id="generatedImage">
+
+            <div id="placeholder">
+                <i class="fas fa-user"></i>
+                <p>Sketch will appear here</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="panel action-panel">
+
+        <h2>Actions</h2>
+
+        <button onclick="generateSketch()">
+            <i class="fas fa-bolt"></i>
+            Generate Sketch
+        </button>
+
+        <button onclick="downloadSketch()">
+            <i class="fas fa-download"></i>
+            Download
+        </button>
+
+        <button onclick="saveCase()">
+            <i class="fas fa-save"></i>
+            Save Case
+        </button>
+
+        <button class="danger" onclick="clearForm()">
+            <i class="fas fa-trash"></i>
+            Clear
+        </button>
+
+    </div>
+
+</div>
+
+<div class="notes">
+
+    <h2>Case Notes</h2>
+
+    <textarea rows="5"
+        placeholder="Investigation notes..."
+    ></textarea>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
